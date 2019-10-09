@@ -14,28 +14,31 @@ public class AddingMachine {
 	 */
 	
 	private int total;
-	
+	private String history = "0";
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
 	}
 	
 	public int getTotal () { // gets the total from the integers and returns it.
-		return 0;
+		return total;
 	}
 	
 	public void add (int value) { // adds an integer value from the total.
-		
+		total = total + value;
+		history += " + " + value; // appends the value added to the history.
 	}
 	
 	public void subtract (int value) { // subtracts an integer value from the total.
-		
+		total = total - value;
+		history += " - " + value; // appends the value subtracted to history.
 	}
 		
-	public String toString () { // changes the integers to a string to be printed.
-		return "";
+	public String toString () { // creates the string of numbers to be printed.
+		return history;
 	}
 
+
 	public void clear() { // clears the values to start over.
-	
+		history = "0";
 	}
 }
